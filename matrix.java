@@ -30,6 +30,25 @@ public class Main {
 		return x;
 	}
 	
+	public static boolean[][] initThreatreArray(int rows, int col) { // *0
+		//int[] func_arr;
+		boolean[][] theater = new boolean[rows][];
+		for(int row = 0; row < theater.length; row++) {
+			theater[row] = new boolean[col];
+		}
+		return theater;
+	}
+	
+	public static void changeTheaterTo(boolean[][] theater, boolean toValue) {
+		// turn all seats to occupied
+		for(int row = 0; row < theater.length; row++) {
+			for(int column = 0 ; column < theater[row].length; column++) {
+				theater[row][column] = toValue;
+			}
+		}
+	}
+	
+	
 	public static void main(String[] args) {
 
 		System.out.println("good morning ...");
@@ -66,6 +85,10 @@ public class Main {
 		// [hint: public static void changeAll(boolean[][] seats, boolean changeTo)]
 		// try to debug		
 		// *etgar: create a function which print all the values of the arrays
+		
+		boolean[][] theater = initThreatreArray(8,  4);
+		changeTheaterTo(theater, true);
+		changeTheaterTo(theater, false);
 	}
 
 }
